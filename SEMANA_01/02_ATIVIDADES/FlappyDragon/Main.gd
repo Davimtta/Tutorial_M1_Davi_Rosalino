@@ -1,9 +1,9 @@
 extends Node # instancia a classe Node2D
 
-var status = 1
-var vscore = 0
-var x = 1.5 
-var y = 1.5 
+var status = 1 #indica se o jogador pode ou não jogar
+var vscore = 0 #a variável aumenta o score cada vez que o dragão passa por uma coluna
+var x = 2 #faz o plano de fundo  se mover com mais ou menos velocidade (movimentação horixontal, eixo x)
+var y = 2 #faz o dragão se movimentar para cima e bara baixo de maneira mais rápida ou mais lenta (movimentação vertical, eixo y)
 
 # executa essa função ao carregar o jogo
 func _ready():
