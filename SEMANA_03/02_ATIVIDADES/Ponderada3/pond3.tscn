@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Saida" type="ColorRect" parent="."]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 896.0
+margin_bottom = 480.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Saida"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 760.0
+margin_bottom = 216.0
+
+[node name="Label" type="Label" parent="Saida"]
+margin_left = 64.0
+margin_top = -24.0
+margin_right = 704.0
+rect_pivot_offset = Vector2( -408, 104 )
+text = "SÍAÍDAS"
+align = 1
+valign = 1
+
+[node name="Entrada" type="LineEdit" parent="."]
+margin_left = 200.0
+margin_top = 64.0
+margin_right = 840.0
+margin_bottom = 192.0
+
+[node name="Label" type="Label" parent="Entrada"]
+margin_left = 8.0
+margin_top = -24.0
+margin_right = 632.0
+rect_pivot_offset = Vector2( -408, 104 )
+text = "ENTRADAS"
+align = 1
+valign = 1
+
+[node name="Botao1" type="Button" parent="."]
+margin_left = 112.0
+margin_top = 512.0
+margin_right = 240.0
+margin_bottom = 576.0
+text = "EXERCÍCIO 1"
+
+[node name="Botao2" type="Button" parent="."]
+margin_left = 336.0
+margin_top = 512.0
+margin_right = 464.0
+margin_bottom = 576.0
+text = "EXERCÍCIO 2"
+
+[node name="Botao3" type="Button" parent="."]
+margin_left = 560.0
+margin_top = 512.0
+margin_right = 688.0
+margin_bottom = 576.0
+text = "EXERCÍCIO 3"
+
+[node name="Botao4" type="Button" parent="."]
+margin_left = 784.0
+margin_top = 512.0
+margin_right = 912.0
+margin_bottom = 576.0
+text = "EXERCÍCIO 4"
+
+[connection signal="pressed" from="Botao1" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Botao1" to="." method="_on_Botao1_pressed"]
+[connection signal="pressed" from="Botao2" to="." method="_on_Botao2_pressed"]
+[connection signal="pressed" from="Botao3" to="." method="_on_Botao3_pressed"]
+[connection signal="pressed" from="Botao4" to="." method="_on_Botao4_pressed"]
