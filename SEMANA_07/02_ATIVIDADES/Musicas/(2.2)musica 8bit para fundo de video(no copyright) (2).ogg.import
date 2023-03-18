@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/(2.2)musica 8bit para fundo de video(no copyright) (2).ogg-5ad59f6533f361d3a9f06029c4dea2f3.oggstr"
+
+[deps]
+
+source_file="res://Musicas/(2.2)musica 8bit para fundo de video(no copyright) (2).ogg"
+dest_files=[ "res://.import/(2.2)musica 8bit para fundo de video(no copyright) (2).ogg-5ad59f6533f361d3a9f06029c4dea2f3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

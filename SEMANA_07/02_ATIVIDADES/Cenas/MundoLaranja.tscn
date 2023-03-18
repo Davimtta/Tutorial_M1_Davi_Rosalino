@@ -1,0 +1,181 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Cenas/MundoLaranja.gd" type="Script" id=1]
+[ext_resource path="res://imagens/ArvoreLaranja.png" type="Texture" id=2]
+[ext_resource path="res://imagens/Pai.png" type="Texture" id=3]
+[ext_resource path="res://imagens/CasaLaranja.png" type="Texture" id=4]
+[ext_resource path="res://imagens/mae.png" type="Texture" id=5]
+[ext_resource path="res://Cenas/MapaLaranja.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Cenas/FundoLaranja.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Cenas/Jogador.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Cenas/MensagemFinal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Musicas/(3)musica 8bit para fundo de video(no copyright) (1).ogg" type="AudioStream" id=10]
+[ext_resource path="res://imagens/BoxLaranja.png" type="Texture" id=11]
+[ext_resource path="res://imagens/Retro Gaming.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1.25823, 2.76735 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 25, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 50, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 75, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 100, 0, 25, 25 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "Casa",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 40, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 60, 0, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "Pai",
+"speed": 4.0
+} ]
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 60, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 80, 0, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Mãe",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 14.4828, 6.75106 )
+
+[sub_resource type="DynamicFont" id=15]
+font_data = ExtResource( 12 )
+
+[node name="MundoLaranja" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="FundoLaranja" parent="." instance=ExtResource( 7 )]
+position = Vector2( 8, -32 )
+
+[node name="Cenario" type="Node2D" parent="."]
+
+[node name="Arvore" type="Sprite" parent="Cenario"]
+position = Vector2( 64, 400 )
+scale = Vector2( 11.475, 11.925 )
+texture = ExtResource( 2 )
+
+[node name="Obstaculo" type="Sprite" parent="Cenario"]
+position = Vector2( 120, 640 )
+rotation = 1.58331
+scale = Vector2( 9.3375, 11.5625 )
+texture = ExtResource( 2 )
+
+[node name="Obstaculo" type="Area2D" parent="Cenario/Obstaculo"]
+position = Vector2( -7.76385, -3.38125 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/Obstaculo/Obstaculo"]
+position = Vector2( -0.35865, -0.00865841 )
+shape = SubResource( 1 )
+
+[node name="Arvore2" type="Sprite" parent="Cenario"]
+position = Vector2( 552, 264 )
+scale = Vector2( 13.1672, 12.7953 )
+texture = ExtResource( 2 )
+
+[node name="CasaEPais" type="Node2D" parent="."]
+
+[node name="Casa" type="AnimatedSprite" parent="CasaEPais"]
+position = Vector2( 888, 192 )
+scale = Vector2( 12.16, 10.17 )
+frames = SubResource( 7 )
+animation = "Casa"
+playing = true
+
+[node name="Pai" type="AnimatedSprite" parent="CasaEPais"]
+position = Vector2( 865.25, 251.25 )
+scale = Vector2( 7.32499, 6.725 )
+frames = SubResource( 10 )
+animation = "Pai"
+frame = 1
+playing = true
+flip_h = true
+
+[node name="Mãe" type="AnimatedSprite" parent="CasaEPais"]
+position = Vector2( 920, 256 )
+scale = Vector2( 5.8, 5.925 )
+frames = SubResource( 13 )
+animation = "Mãe"
+frame = 1
+playing = true
+flip_h = true
+
+[node name="Interacao" type="Area2D" parent="CasaEPais/Mãe"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CasaEPais/Mãe/Interacao"]
+position = Vector2( 6.20691, 4.05063 )
+shape = SubResource( 14 )
+
+[node name="MapaLaranja" parent="." instance=ExtResource( 6 )]
+
+[node name="Jogador" parent="." instance=ExtResource( 8 )]
+position = Vector2( 29, 472 )
+
+[node name="MensagemFinal" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.0
+autoplay = true
+
+[node name="BoxPonderada" type="Sprite" parent="."]
+position = Vector2( 184, 144.125 )
+scale = Vector2( 4.26667, 5.325 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 64.0
+margin_right = 280.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 15 )
+text = "
+VOCÊ ESTÁ QUASE LÁ...
+ NÃO DESISTA AGORA!"
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="body_entered" from="Cenario/Obstaculo/Obstaculo" to="." method="_on_Obstaculo_body_entered"]
+[connection signal="body_entered" from="CasaEPais/Mãe/Interacao" to="." method="_on_Interacao_body_entered"]

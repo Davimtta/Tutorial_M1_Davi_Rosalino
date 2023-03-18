@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Créditos.gd" type="Script" id=1]
+[ext_resource path="res://imagens/Retro Gaming.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+font_data = ExtResource( 2 )
+
+[node name="Créditos" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.0941176, 0.054902, 0.133333, 0.839216 )
+margin_left = -33.0
+margin_top = -33.0
+margin_right = 1057.0
+margin_bottom = 615.0
+rect_pivot_offset = Vector2( -431, -15 )
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 920.0
+margin_top = 32.0
+margin_right = 992.0
+margin_bottom = 72.0
+text = "MENU"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 152.0
+margin_top = 72.0
+margin_right = 896.0
+margin_bottom = 520.0
+custom_fonts/font = SubResource( 1 )
+text = "
+Jogo criado por Davi Motta
+Idealização : Davi Motta
+Artes Visuais : Davi Motta
+Roteiro : Davi Motta
+Pixel Arts : Davi Motta
+Trilha Sonora : \"musica 8bit para fundo de video(no copyright)\" - https://www.youtube.com/watch?v=DAKISNbsuc0"
+align = 1
+autowrap = true
+
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]

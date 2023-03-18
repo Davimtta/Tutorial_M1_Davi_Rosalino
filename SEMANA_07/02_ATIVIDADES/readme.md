@@ -1,35 +1,16 @@
-Para esta semana sua tarefa é criar um jogo baseado num dos seguintes temas:
+# godot-plugin-import-animation-tree-player
 
--Desde que tenhamos um ao outro, os problemas nunca acabarão
 
--Decepção
+This plugin lets you import all animations in the AnimationPlayer to the AnimationTreePlayer as animation nodes.
 
--Extinção
+Steps:
+1) select the animation player and press the LOAD button in the ImportAnim window
+2) select the AnimationTreePlayer and press the IMPORT button
+3) refresh the AnimationTreePlayer selecting another node and selecting again the AnimationTreePlayer
 
--Não vemos coisas como elas são, vemos como nós somos.
+You can optionally SAVE all the animations, present in the AnimationPlayer, as separate files (saved in res://animations)
 
--O que fazemos agora?
+known bugs:
+once you import all the animations in the AnimationTreePlayer the nodes don't show up immediately, you have to select another node and then select again
 
--Ritual
-
--Ondas
-
--Transmissão
-
--O que casa significa para você?
-
--Reparo
-
--Achados e perdidos
-
--Dualidade
-
-O jogo deve possuir ao menos:
-
-- Uma tela inicial
-
-- Uma fase jogável
-
-- Uma justificativa/explicação relacionando o tema escolhido e o jogo desenvolvido.
-
-Ao terminar, salve o código fonte de seu jogo na sua pasta do Github e publique-o no seu GitPages.
+![alt text](/ImportAnimTreePlayer.jpg)

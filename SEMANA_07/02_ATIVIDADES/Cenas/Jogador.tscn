@@ -1,0 +1,88 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://imagens/jogadorPonderada.png" type="Texture" id=1]
+[ext_resource path="res://Cenas/Jogador.gd" type="Script" id=2]
+[ext_resource path="res://imagens/JogadorParado.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20, 28.1274 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 20, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 40, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 60, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 100, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 20, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 40, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 60, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "JogadorAnda",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "Jogador_ParadoPula ",
+"speed": 5.0
+} ]
+
+[node name="Jogador" type="KinematicBody2D"]
+position = Vector2( 48, 472 )
+rotation = -0.376643
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_vertical_guides_": [ 1041.0 ]
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -5.23407, 2.37573 )
+rotation = 0.378365
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.745566, -3.93541 )
+rotation = 0.374517
+scale = Vector2( 2.75755, 3.23042 )
+frames = SubResource( 8 )
+animation = "JogadorAnda"
+frame = 1
+playing = true

@@ -1,0 +1,162 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Cenas/Espinhos.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cenas/Mapa2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Cenas/Fundo2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Cenas/Jogador.tscn" type="PackedScene" id=4]
+[ext_resource path="res://imagens/PoemaPonderada.png" type="Texture" id=5]
+[ext_resource path="res://imagens/placaPonderada.png" type="Texture" id=6]
+[ext_resource path="res://Cenas/MundoAzul2.gd" type="Script" id=7]
+[ext_resource path="res://Cenas/Area2D.gd" type="Script" id=8]
+[ext_resource path="res://Cenas/Mensagem2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Musicas/(2.2)musica 8bit para fundo de video(no copyright) (2).ogg" type="AudioStream" id=10]
+[ext_resource path="res://imagens/BoxPonderada.png" type="Texture" id=11]
+[ext_resource path="res://imagens/Retro Gaming.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 5 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 5 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 512, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 576, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 640, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 16, 24 )
+
+[sub_resource type="DynamicFont" id=14]
+font_data = ExtResource( 12 )
+
+[node name="MundoAzul2" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Fundo2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -13, 3 )
+
+[node name="Mapa2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3, -26 )
+tile_data = PoolIntArray( 16, 2, 0, 131071, 2, 0, 65552, 2, 0, 196607, 2, 0, 131088, 2, 0, 262143, 2, 0, 196624, 2, 0, 327679, 2, 0, 262160, 2, 0, 393215, 2, 0, 327695, 1, 0, 458751, 2, 0, 393227, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 2, 0, 524287, 2, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0, 524288, 1, 0, 524290, 1, 0, 524292, 1, 0, 524293, 1, 0, 524295, 1, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 589824, 2, 0, 589826, 2, 0, 589828, 2, 0, 589829, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0 )
+
+[node name="PlacaPonderada" type="Sprite" parent="."]
+position = Vector2( 744, 328 )
+texture = ExtResource( 6 )
+
+[node name="Jogador" parent="." instance=ExtResource( 4 )]
+position = Vector2( 37, 442 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_vertical_guides_": [ 929.0 ]
+}
+
+[node name="Espinhos" type="Node2D" parent="."]
+
+[node name="Espinhos" parent="Espinhos" instance=ExtResource( 1 )]
+position = Vector2( 100, 589 )
+
+[node name="Espinhos2" parent="Espinhos" instance=ExtResource( 1 )]
+position = Vector2( 227, 579 )
+
+[node name="Espinhos3" parent="Espinhos" instance=ExtResource( 1 )]
+position = Vector2( 417, 577 )
+
+[node name="Espinhos5" parent="Espinhos" instance=ExtResource( 1 )]
+position = Vector2( 804, 467 )
+
+[node name="Coletavel" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Coletavel"]
+position = Vector2( 1000, 264 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Coletavel/Area2D"]
+scale = Vector2( 0.562501, 0.75 )
+frames = SubResource( 12 )
+frame = 6
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coletavel/Area2D"]
+shape = SubResource( 13 )
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 928.0
+margin_top = 32.0
+margin_right = 992.0
+margin_bottom = 72.0
+text = "MENU"
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Mensagem2" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.0
+autoplay = true
+
+[node name="BoxPonderada" type="Sprite" parent="."]
+position = Vector2( 184, 144.125 )
+scale = Vector2( 4.26667, 5.325 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 64.0
+margin_right = 280.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 14 )
+text = "
+PARA ATINGIR  SEU OBJETIVO EVITE FURAR-SE COM OS ESPINHOS"
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="body_entered" from="Coletavel/Area2D" to="Coletavel/Area2D" method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
